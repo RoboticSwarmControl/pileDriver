@@ -29,7 +29,7 @@ if __name__=='__main__':
     a = Fb/m #Acceleration on ball
     NoC = range(1,101) #100 contacts
     
-    V0 = 0
+    V0= 0
     sum = 0
     
     Vimplist = list() #List to store impact velocities
