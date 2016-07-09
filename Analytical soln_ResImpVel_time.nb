@@ -1,0 +1,761 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     25504,        752]
+NotebookOptionsPosition[     24179,        707]
+NotebookOutlinePosition[     24556,        723]
+CellTagsIndexPosition[     24513,        720]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Parametric expressions for resonant impact velocity & \
+forward/reverse times for the Piledriver",
+ FontFamily->"Gill Sans MT",
+ FontSize->20,
+ FontVariations->{"Underline"->True},
+ FontColor->RGBColor[0., 0., 0.]]], "Title",
+ CellChangeTimes->{{3.676934069530342*^9, 3.6769341445258803`*^9}, {
+  3.6769409644069567`*^9, 3.676940973787923*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["1. Expression for resonant impact velocity w.r.t input parameters\n\
+\n\t",
+  FontFamily->"Arial",
+  FontSize->16,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox["I/p variables:",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontVariations->{"Underline"->True},
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[" e, k, \[Rho], r, L, M, \[CapitalDelta]B\n\t",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox["Required o/p variables",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontVariations->{"Underline"->True},
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[": v - resonant impact velocity;",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[" ",
+  FontFamily->"Arial",
+  FontSize->16,
+  FontColor->RGBColor[0., 0., 0.]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "for"], TraditionalForm]],
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[" - duration when gradient wave > 0; ",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "rev"], TraditionalForm]],
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[" - duration when gradient wave < 0\n\t",
+  FontFamily->"Arial",
+  FontSize->14,
+  FontColor->RGBColor[0., 0., 0.]]
+}], "Section",
+ CellChangeTimes->{{3.6769341577721057`*^9, 3.676934177091455*^9}, {
+  3.676934207470265*^9, 3.6769342175460796`*^9}, {3.6769401928696656`*^9, 
+  3.676940338650442*^9}, {3.6769403796484976`*^9, 3.676940388926175*^9}, {
+  3.6770804442107277`*^9, 3.6770804609906917`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"v", "\[Equal]", 
+  RowBox[{
+   FractionBox["2", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["e", "2"]}]], " ", 
+   SqrtBox[
+    RowBox[{
+     FractionBox["f", "km"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["e", "2"], "+", "1"}], ")"}]}], "-", 
+       RowBox[{"kL", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["e", "2"], "-", "1"}], ")"}]}], "+", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             SuperscriptBox["\[ExponentialE]", "2"]}], ")"}], "2"], " ", 
+          SuperscriptBox["f", "2"]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"2", "-", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["\[ExponentialE]", "4"]}]}], ")"}], " ", "f", " ",
+           "k", " ", "L"}]}]]}], ")"}]}]], " "}]}]], "Input",
+ CellChangeTimes->{{3.6770804951580524`*^9, 3.677080516791749*^9}, 
+   3.6770933715805693`*^9}],
+
+Cell[TextData[{
+ "where,\n\[OpenCurlyQuote]v\[CloseCurlyQuote] is the resonant impact \
+velocity, \n\[OpenCurlyQuote]e\[CloseCurlyQuote] is the CoeR, and 0 \
+\[LessEqual] e < 1 (at e = 1, impact velocity keeps increasing indefinitely \
+with no. of contacts)\n\[OpenCurlyQuote]k\[CloseCurlyQuote] is the stiffness \
+constant in N/m, \n\[OpenCurlyQuote]L\[CloseCurlyQuote] is the length of the \
+tube\n\[OpenCurlyQuote]m\[CloseCurlyQuote] is the mass of the ball = \[Rho] \
+\[Times] ",
+ StyleBox["Volume",
+  FontSlant->"Italic"],
+ "; where \[Rho] is the density, ",
+ StyleBox["Volume = ",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["4", "3"], " ", "\[Times]", " ", "\[Pi]", " ", "\[Times]", 
+    " ", 
+    SuperscriptBox["r", "3"]}], TraditionalForm]]],
+ ", and ",
+ StyleBox["r",
+  FontSlant->"Italic"],
+ " is the radius of the ball\n\[OpenCurlyQuote]f\[CloseCurlyQuote] is the \
+force on the ball = ",
+ StyleBox["M\[Times]",
+  FontSlant->"Italic"],
+ " \[CapitalDelta]",
+ StyleBox["B \[Times]",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["Volume, ",
+  FontSlant->"Italic"],
+ "where ",
+ StyleBox["M ",
+  FontSlant->"Italic"],
+ "is the Magnetization in A/m, \[CapitalDelta]",
+ StyleBox["B",
+  FontSlant->"Italic"],
+ " is the field gradient in T/m\n\nSubstituting \[OpenCurlyQuote]f\
+\[CloseCurlyQuote] with ",
+ StyleBox["M \[Times] \[CapitalDelta]B \[Times] Volume,",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{
+  3.677080507393379*^9, {3.677080558912713*^9, 3.6770806318755856`*^9}, {
+   3.6770933760650005`*^9, 3.6770934534740467`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"v", " ", "\[Equal]", " ", 
+  RowBox[{
+   FractionBox["2", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["e", "2"]}]], " ", 
+   SqrtBox[
+    RowBox[{
+     FractionBox[
+      RowBox[{"M", " ", "\[CapitalDelta]B", " "}], 
+      RowBox[{"k", " ", "\[Rho]"}]], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"1.33", "\[Pi]", " ", "M", " ", "\[CapitalDelta]B", " ", 
+        SuperscriptBox["r", "3"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["e", "2"], "+", "1"}], ")"}]}], "-", 
+       RowBox[{"k", " ", "L", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["e", "2"], "-", "1"}], ")"}]}], "+", 
+       SqrtBox[
+        RowBox[{
+         RowBox[{"1.78", 
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             SuperscriptBox["e", "2"]}], ")"}], "2"], " ", 
+          SuperscriptBox["M", "2"], 
+          SuperscriptBox["\[CapitalDelta]B", "2"], 
+          SuperscriptBox["\[Pi]", "2"], 
+          SuperscriptBox["r", "6"]}], "+", 
+         RowBox[{"1.33", 
+          RowBox[{"(", 
+           RowBox[{"2", "-", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["e", "4"]}]}], ")"}], " ", "M", " ", 
+          "\[CapitalDelta]B", " ", "\[Pi]", " ", 
+          SuperscriptBox["r", "3"], "k", " ", "L"}]}]]}], 
+      ")"}]}]]}]}]], "Input",
+ CellChangeTimes->{{3.6770804654567676`*^9, 3.6770804740607967`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{
+      FractionBox["2", 
+       RowBox[{"1", "-", 
+        SuperscriptBox["e", "2"]}]], " ", 
+      SqrtBox[
+       RowBox[{
+        FractionBox[
+         RowBox[{"M", " ", "\[CapitalDelta]B", " "}], 
+         RowBox[{"k", " ", "\[Rho]"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"1.33", "\[Pi]", " ", "M", " ", "\[CapitalDelta]B", " ", 
+           SuperscriptBox["r", "3"], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["e", "2"], "+", "1"}], ")"}]}], "-", 
+          RowBox[{"k", " ", "L", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             SuperscriptBox["e", "2"], "-", "1"}], ")"}]}], "+", 
+          SqrtBox[
+           RowBox[{
+            RowBox[{"1.78", 
+             SuperscriptBox[
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                SuperscriptBox["e", "2"]}], ")"}], "2"], " ", 
+             SuperscriptBox["M", "2"], 
+             SuperscriptBox["\[CapitalDelta]B", "2"], 
+             SuperscriptBox["\[Pi]", "2"], 
+             SuperscriptBox["r", "6"]}], "+", 
+            RowBox[{"1.33", 
+             RowBox[{"(", 
+              RowBox[{"2", "-", 
+               RowBox[{"2", " ", 
+                SuperscriptBox["e", "4"]}]}], ")"}], " ", "M", " ", 
+             "\[CapitalDelta]B", " ", "\[Pi]", " ", 
+             SuperscriptBox["r", "3"], "k", " ", "L"}]}]]}], ")"}]}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[CapitalDelta]B", ",", " ", "0", ",", "0.023"}], "}"}]}], 
+    "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"L", ",", "0.03"}], "}"}], ",", "0", ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"M", ",", 
+     RowBox[{"1.36", "\[Times]", 
+      SuperscriptBox["10", "6"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0.0025"}], "}"}], ",", "0", ",", "0.01"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"e", ",", "0.9"}], "}"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", "50"}], "}"}], ",", "1", ",", "100"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]", ",", "8530"}], "}"}], ",", "1", ",", "10000"}], 
+    "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.676934041575985*^9, 3.6769342409513226`*^9, {3.6769443264363003`*^9, 
+   3.676944333158181*^9}, {3.6769489381735888`*^9, 3.6769489550725355`*^9}, 
+   3.676949102292139*^9, {3.676949277380874*^9, 3.67694933642992*^9}, 
+   3.67706849452758*^9, {3.6770688468446717`*^9, 3.6770688753704147`*^9}, {
+   3.677068909592123*^9, 3.677068913615323*^9}, {3.6770689539313526`*^9, 
+   3.6770690287618847`*^9}, {3.677069217037814*^9, 3.6770692349445925`*^9}, {
+   3.677071818568576*^9, 3.6770718305547056`*^9}, {3.6770724293454094`*^9, 
+   3.677072441245801*^9}, {3.677072554241088*^9, 3.6770725542420893`*^9}, {
+   3.677073469905703*^9, 3.677073733869464*^9}, {3.677074016552534*^9, 
+   3.677074028370759*^9}, {3.6770744678755875`*^9, 3.6770744678765893`*^9}, {
+   3.6770746949576006`*^9, 3.677074694958604*^9}, {3.677075236611943*^9, 
+   3.6770753105731716`*^9}, {3.67707546438089*^9, 3.677075464383896*^9}, {
+   3.677075782976487*^9, 3.6770757829774885`*^9}, {3.677075917045967*^9, 
+   3.677075929410124*^9}, {3.6770769707029467`*^9, 3.6770769757832174`*^9}, {
+   3.6770770114464345`*^9, 3.6770770269996805`*^9}, {3.6770771351998997`*^9, 
+   3.6770773873806906`*^9}, {3.6770774177134175`*^9, 
+   3.6770774554135933`*^9}, {3.6770778211522894`*^9, 
+   3.6770778326183763`*^9}, {3.677078079162285*^9, 3.6770781204438887`*^9}, {
+   3.6770781595292816`*^9, 3.67707822233177*^9}, {3.677078276473424*^9, 
+   3.6770783678863792`*^9}, {3.677078850400072*^9, 3.677078922558749*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`e$$ = 0.9, $CellContext`k$$ = 
+    50, $CellContext`L$$ = 0.03, $CellContext`M$$ = 
+    1.36*^6, $CellContext`r$$ = 0.0025, $CellContext`\[Rho]$$ = 8530, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`L$$], 0.03}, 0, 0.05}, {
+      Hold[$CellContext`M$$], 1.36*^6}, {{
+       Hold[$CellContext`r$$], 0.0025}, 0, 0.01}, {{
+       Hold[$CellContext`e$$], 0.9}, 0, 1}, {{
+       Hold[$CellContext`k$$], 50}, 1, 100}, {{
+       Hold[$CellContext`\[Rho]$$], 8530}, 1, 10000}}, Typeset`size$$ = {
+    396., {120., 124.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`L$9883$$ = 
+    0, $CellContext`r$9884$$ = 0, $CellContext`e$9885$$ = 
+    0, $CellContext`k$9886$$ = 0, $CellContext`\[Rho]$9887$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`e$$ = 0.9, $CellContext`k$$ = 
+        50, $CellContext`L$$ = 0.03, $CellContext`M$$ = 
+        1.36*^6, $CellContext`r$$ = 0.0025, $CellContext`\[Rho]$$ = 8530}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`L$$, $CellContext`L$9883$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$9884$$, 0], 
+        Hold[$CellContext`e$$, $CellContext`e$9885$$, 0], 
+        Hold[$CellContext`k$$, $CellContext`k$9886$$, 0], 
+        Hold[$CellContext`\[Rho]$$, $CellContext`\[Rho]$9887$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Plot[(2/(1 - $CellContext`e$$^2)) (($CellContext`M$$ ($CellContext`\
+\[CapitalDelta]B/($CellContext`k$$ $CellContext`\[Rho]$$))) (((((1.33 
+                
+                Pi) $CellContext`M$$) $CellContext`\[CapitalDelta]B) \
+$CellContext`r$$^3) ($CellContext`e$$^2 + 
+             1) - ($CellContext`k$$ $CellContext`L$$) ($CellContext`e$$^2 - 
+            1) + (((((
+                  1.78 (1 + $CellContext`e$$^2)^2) $CellContext`M$$^2) \
+$CellContext`\[CapitalDelta]B^2) 
+               Pi^2) $CellContext`r$$^6 + ((((((
+                    1.33 (2 - 
+                    2 $CellContext`e$$^4)) $CellContext`M$$) $CellContext`\
+\[CapitalDelta]B) Pi) $CellContext`r$$^3) $CellContext`k$$) $CellContext`L$$)^
+            Rational[1, 2]))^Rational[1, 2], {$CellContext`\[CapitalDelta]B, 
+         0, 0.023}], 
+      "Specifications" :> {{{$CellContext`L$$, 0.03}, 0, 
+         0.05}, {$CellContext`M$$, 1.36*^6}, {{$CellContext`r$$, 0.0025}, 0, 
+         0.01}, {{$CellContext`e$$, 0.9}, 0, 1}, {{$CellContext`k$$, 50}, 1, 
+         100}, {{$CellContext`\[Rho]$$, 8530}, 1, 10000}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{451., {247., 254.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{
+  3.677077471304001*^9, 3.677078395998456*^9, 3.677078863650464*^9, {
+   3.677078893680707*^9, 3.677078912650403*^9}, 3.6770804379749575`*^9, {
+   3.6770806477750187`*^9, 3.677080649923661*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.676934244603035*^9, 3.6769342793073473`*^9}}],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.6769342845693464`*^9, 3.6769343417574663`*^9}, {
+  3.676934380319042*^9, 3.6769343942851915`*^9}, {3.676934449322589*^9, 
+  3.676934738078628*^9}, {3.6769348339861774`*^9, 3.6769348793388247`*^9}, {
+  3.6770806433736815`*^9, 3.6770806458221784`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["2. Expression for reverse/forward times - ", "Section",
+  FontFamily->"Arial",
+  FontSize->16,
+  FontColor->RGBColor[0., 0., 0.]],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox["t", "rev"], " ", "&"}], " "}], TraditionalForm]], "Section",
+  FormatType->"TraditionalForm",
+  FontFamily->"Arial",
+  FontSize->16,
+  FontColor->RGBColor[0., 0., 0.]], "Section"],
+ StyleBox[Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "for"], TraditionalForm]], "Section",
+  FontFamily->"Arial",
+  FontSize->16,
+  FontColor->RGBColor[0., 0., 0.]], "Section"]
+}], "Chapter",
+ CellChangeTimes->{{3.6769348990231686`*^9, 3.676934976945442*^9}}],
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", "i", ")"}], "  ", 
+     SubscriptBox["t", "rev"]}], "=", " ", 
+    SubscriptBox["t", "1"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["+",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ StyleBox["\n",
+  FontWeight->"Bold"],
+ "\nwhere,\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is the time taken for the ball to travel from y=L to y=0 after impact\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is the time taken for the ball to travel from y=0 to y=y0 where y0 \
+represents maximum compression of the spring "
+}], "Text",
+ CellChangeTimes->{{3.6769372465249615`*^9, 3.676937283962529*^9}, {
+  3.6769373177682695`*^9, 3.676937326596778*^9}, {3.676937359637928*^9, 
+  3.676937485765414*^9}, {3.676937528522148*^9, 3.6769375293603783`*^9}, {
+  3.6769375813366327`*^9, 3.676937591706216*^9}, {3.676938113373872*^9, 
+  3.676938116050993*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"t1", "\[Equal]", " ", 
+   FractionBox[
+    RowBox[{
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["e", "2"], "\[InvisibleComma]", 
+       RowBox[{
+        SuperscriptBox["v", "2"], "+", 
+        FractionBox[
+         RowBox[{"2", "fL"}], "m"]}]}]], "-", "ev"}], 
+    FractionBox["f", "m"]]}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.6769375988151274`*^9, 3.6769377559571247`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6769371387213187`*^9, 3.676937232094564*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"t2", "\[Equal]", " ", 
+   FractionBox[
+    RowBox[{"\[Pi]n", " ", "-", " ", 
+     RowBox[{"ArcTan", "[", 
+      FractionBox[
+       RowBox[{"k", 
+        RowBox[{"(", 
+         SqrtBox[
+          RowBox[{
+           RowBox[{
+            SuperscriptBox["e", "2"], 
+            SuperscriptBox["v", "2"]}], "+", 
+           FractionBox[
+            RowBox[{"2", "fL"}], "m"]}]], ")"}]}], "f\[Omega]"], "]"}]}], 
+    "\[Omega]"]}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.676937776018487*^9, 3.6769377974926167`*^9}, {
+  3.6769378391233473`*^9, 3.6769379908218822`*^9}, {3.6769396488652782`*^9, 
+  3.6769396796100597`*^9}, {3.6770767562043023`*^9, 3.677076800901252*^9}}],
+
+Cell[TextData[{
+ "where, \n",
+ StyleBox["n ",
+  FontSlant->"Italic"],
+ "is the smallest integer (positive, negative or 0) that gives a positive \
+value for ",
+ StyleBox["t2",
+  FontSlant->"Italic"],
+ "\n\[Omega] = ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    FractionBox["k", "m"]], TraditionalForm]]],
+ "in rad/s\n\[OpenCurlyQuote]",
+ StyleBox["v\[CloseCurlyQuote]",
+  FontSlant->"Italic"],
+ "  is the resonant impact velocity calculated in the previous section\n"
+}], "Text",
+ CellChangeTimes->{{3.676938009316079*^9, 3.676938043949223*^9}, {
+   3.6769398569919*^9, 3.6769399095156293`*^9}, 3.6769401190964375`*^9, {
+   3.6770768048077497`*^9, 3.6770768726545086`*^9}, {3.6770769249056993`*^9, 
+   3.677076929730507*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   RowBox[{
+    SubscriptBox["t", "rev"], "\[Equal]", " ", 
+    RowBox[{
+     SubscriptBox["t", "1"], "+", " ", 
+     SubscriptBox["t", "2"]}]}], "\[IndentingNewLine]"}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.6769380621987705`*^9, 3.6769380897440166`*^9}, 
+   3.6769401203517675`*^9}],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{
+    StyleBox[
+     FormBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", "ii", ")"}], 
+        SubscriptBox["t", "for"]}], "=", " ", 
+       RowBox[{
+        SubscriptBox["t", "3"], "+", 
+        SubscriptBox["t", "4"], " "}]}],
+      TraditionalForm],
+     FontWeight->"Bold"], 
+    StyleBox["\[IndentingNewLine]",
+     FontWeight->"Plain"]}],
+   FontFamily->"Arial",
+   FontSize->14,
+   FontSlant->"Italic"]}]], "Input",
+ CellChangeTimes->{{3.6769381071924286`*^9, 3.6769381204045725`*^9}, {
+  3.676938155900996*^9, 3.6769381638982906`*^9}, {3.6769394941026125`*^9, 
+  3.6769395026333017`*^9}}],
+
+Cell[TextData[{
+ "where,\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "3"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is the time taken for the ball to travel from y=y0 to y=0, where y0 \
+represents maximum compression of the spring\n",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "4"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is the time taken for the ball to travel from y=0 to y=L in the forward \
+direction"
+}], "Text",
+ CellChangeTimes->{{3.6769395138471327`*^9, 3.676939595694845*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   SubscriptBox["t", "3"], 
+   StyleBox[" ",
+    FontFamily->"Courier New"], 
+   StyleBox["\[Equal]",
+    FontFamily->"Courier New"], 
+   StyleBox[" ",
+    FontFamily->"Courier New"], 
+   StyleBox[
+    FractionBox[
+     RowBox[{
+      RowBox[{"ArcCos", "[", 
+       FractionBox["f", 
+        RowBox[{"f", "+", 
+         SubscriptBox["ky", "0"]}]], "]"}], "+", 
+      RowBox[{"2", "\[Pi]n"}]}], "\[Omega]"],
+    FontFamily->"Courier New"]}],
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.676939602265324*^9, 3.676939643787772*^9}, {
+  3.67693969290743*^9, 3.676939735614031*^9}, {3.6769399697368135`*^9, 
+  3.6769399828931293`*^9}, {3.677076901536681*^9, 3.6770769056989746`*^9}}],
+
+Cell[TextData[{
+ "where,\n",
+ StyleBox["n ",
+  FontSlant->"Italic"],
+ "is the smallest integer (positive, negative or 0) that gives a positive \
+value for ",
+ StyleBox["t2",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.676939748973572*^9, 3.6769397611950755`*^9}, {
+  3.6770769109957275`*^9, 3.6770769414741416`*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   SubscriptBox["y", "0"], " ", "\[Equal]", " ", 
+   FractionBox[
+    RowBox[{"f", "+", 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["f", "2"], "+", 
+       RowBox[{
+        SuperscriptBox["kme", "2"], 
+        SuperscriptBox["v", "2"]}], "+", 
+       RowBox[{"2", "fLk"}]}]]}], "k"]}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.6769397659697933`*^9, 3.6769398476861424`*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   SubscriptBox["t", "4"], " ", "\[Equal]", " ", 
+   FractionBox[
+    RowBox[{"v", " ", "-", " ", 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["v", "2"], "-", 
+       FractionBox[
+        RowBox[{"2", "fL"}], "m"]}]]}], 
+    FractionBox["f", "m"]]}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.6769399931885223`*^9, 3.6769399996888046`*^9}, {
+  3.6769400401704903`*^9, 3.676940096799117*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+   SubscriptBox["t", "for"], "\[Equal]", " ", 
+   RowBox[{
+    SubscriptBox["t", "3"], "+", " ", 
+    SubscriptBox["t", "4"]}]}],
+  FontFamily->"Courier New",
+  FontSize->16]], "Input",
+ CellChangeTimes->{{3.6769401446062875`*^9, 3.67694014952938*^9}}],
+
+Cell[TextData[{
+ "\nHence, for a given set of inputs, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"v", ",", " ", 
+    SubscriptBox["t", "for"]}], TraditionalForm]]],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "rev"], TraditionalForm]]],
+ " can be calculated using the above formula. The analytically calculated \
+values have been validated with the MATLAB simulation results.\n\nHowever, it \
+is to be noted that ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["t", "rev"], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{",", " ", 
+    SubscriptBox["t", "for"]}], TraditionalForm]]],
+ " vary for a few initial contacts before attaining steady state/resonant \
+values. The above formulae do not apply for the initial transient phase. \
+Hence, driving the system from the start with a gradient wave as per the \
+above calculations for",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"  ", 
+    SubscriptBox["t", "rev"]}], TraditionalForm]]],
+ Cell[BoxData[
+  FormBox[
+   RowBox[{",", " ", 
+    SubscriptBox["t", "for"]}], TraditionalForm]]],
+ " might not necessarily result in the ",
+ StyleBox["v",
+  FontSlant->"Italic"],
+ " calculated above.\n\n"
+}], "Text",
+ CellChangeTimes->{{3.6769401598267727`*^9, 3.6769401856785383`*^9}, {
+   3.6769404060677795`*^9, 3.676940952915388*^9}, {3.676941176640913*^9, 
+   3.676941257934125*^9}, {3.6770770643202114`*^9, 3.6770770766919107`*^9}, 
+   3.6770806603449864`*^9, {3.677093549023362*^9, 3.6770935721560116`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 637},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+Magnification:>1.1 Inherited,
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (September 9, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 368, 7, 75, "Title"],
+Cell[CellGroupData[{
+Cell[973, 33, 1647, 52, 144, "Section"],
+Cell[2623, 87, 1079, 34, 64, "Input"],
+Cell[3705, 123, 1577, 45, 207, "Text"],
+Cell[5285, 170, 1433, 41, 64, "Input"],
+Cell[CellGroupData[{
+Cell[6743, 215, 3888, 92, 100, "Input"],
+Cell[10634, 309, 3717, 71, 519, "Output"]
+}, Open  ]],
+Cell[14366, 383, 94, 1, 32, "Input"],
+Cell[14463, 386, 289, 4, 32, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14789, 395, 680, 21, 54, "Chapter"],
+Cell[15472, 418, 1338, 42, 114, "Text"],
+Cell[16813, 462, 459, 15, 111, "Input"],
+Cell[17275, 479, 94, 1, 32, "Input"],
+Cell[17372, 482, 741, 21, 92, "Input"],
+Cell[18116, 505, 723, 21, 143, "Text"],
+Cell[18842, 528, 360, 11, 65, "Input"],
+Cell[19205, 541, 674, 22, 73, "Input"],
+Cell[19882, 565, 530, 15, 73, "Text"],
+Cell[20415, 582, 718, 22, 78, "Input"],
+Cell[21136, 606, 329, 10, 53, "Text"],
+Cell[21468, 618, 455, 15, 72, "Input"],
+Cell[21926, 635, 470, 15, 111, "Input"],
+Cell[22399, 652, 288, 9, 37, "Input"],
+Cell[22690, 663, 1461, 40, 175, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
